@@ -7,9 +7,11 @@ class KhiladiModel {
   String image;
   KhiladiModel({this.id, this.title, this.description, this.image});
 
-  KhiladiModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    description = json['description'];
+  factory KhiladiModel.fromJson(Map<String, dynamic> json) {
+    return KhiladiModel(
+        id: json['id'],
+        title: json['title'],
+        description: json['description'],
+        image: json['image']);
   }
 }

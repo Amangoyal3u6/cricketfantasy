@@ -1,10 +1,14 @@
-import 'package:cricketfantasy/model/api_service.dart';
+import 'dart:convert';
+
+import 'package:cricketfantasy/model/config.dart';
 import 'package:cricketfantasy/model/model.dart';
+import 'package:cricketfantasy/model/schedule/api_service.dart';
 import 'package:flutter/material.dart';
 
 import '../util/vars.dart';
 import 'page/custome_drawer.dart';
 import 'page/wallet_screen.dart';
+import 'package:http/http.dart' as http;
 
 class AboutUsScreen extends StatefulWidget {
   @override
@@ -12,14 +16,44 @@ class AboutUsScreen extends StatefulWidget {
 }
 
 class _AboutUsScreenState extends State<AboutUsScreen> {
-  ApiService apiService;
-  KhiladiModel model;
+  String stringResponse;
+  List ListResponse;
+  Future fetchData() async {
+    http.Response response;
+     String url = Config.url;
+    response = await http.get(url);
+    if(response.statusCode == 200){
+      setState(() {
+        stringResponse = response.body;
+      });
+    }
+  }
+  // Future<KhiladiModel> fetchAlbum() async {
+  //   String url = Config.url;
+  //   final response = await http.get(url);
+  //   String data = response.body;
+
+  //   if (response.statusCode == 200) {
+  //     // If the server did return a 200 OK response,
+  //     // then parse the JSON.
+  //     print(response.body);
+  //     var description = jsonDecode(data)[0]['description'];
+  //     print('description123: $description');
+  //     return KhiladiModel.fromJson(jsonDecode(data));
+  //   } else {
+  //     // If the server did not return a 200 OK response,
+  //     // then throw an exception.
+  //     throw Exception('Failed to load album');
+  //   }
+  // }
+
+  Future<KhiladiModel> futureAlbum;
+
   @override
   void initState() {
-    // TODO: implement initState
+    fetchData();
     super.initState();
-    apiService = new ApiService();
-    model = new KhiladiModel();
+   
   }
 
   @override
@@ -53,24 +87,8 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
       body: SafeArea(
         child: Container(
             margin: EdgeInsets.only(top: 20, left: 16, right: 16),
-            child: FutureBuilder(
-              future: apiService.createUser(model).then((value) {
-                setState(() {
-                  if (value) {
-                    print('value : $value');
-                  } else {
-                    print('no data found');
-                  }
-                });
-              }),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Text(model.description);
-                } else {
-                  return Text('Nod data found');
-                }
-              },
-            )),
+           child: ,
+           ),
       ),
     );
   }

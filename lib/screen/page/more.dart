@@ -2,7 +2,7 @@ import 'package:cricketfantasy/screen/page/payment/kyc_verification.dart';
 import 'package:cricketfantasy/screen/widget/webview.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import '../aabout_us_screen.dart';
+import '../about_us_screen.dart';
 import 'contest_invite_code.dart';
 import 'home.dart';
 import 'package:cricketfantasy/util/extensions.dart';
