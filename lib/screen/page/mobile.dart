@@ -58,52 +58,48 @@ class _MobileState extends State<MobileScreen> with TickerProviderStateMixin {
           ])),
       SafeArea(
           child: Container(
-                  margin: EdgeInsets.all(10),
-                  constraints: BoxConstraints(
-                      maxWidth: MediaQuery.of(context).size.width,
-                      maxHeight: MediaQuery.of(context).size.height),
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        _help(),
-                        SizedBox(height: 10),
-                        Text('Please enter your 10-digit \nmobile number.',
-                            style: TextStyle(fontSize: 16)),
-                        SizedBox(height: 10),
-                        Container(
-                            margin: EdgeInsets.all(10), child: _mobileInput()),
-                        RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(children: [
-                              TextSpan(
-                                  text: 'By continue, you are agree to our ',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: quickFont)),
-                              TextSpan(
-                                  text: 'Terms of Service',
-                                  style: TextStyle(
-                                      color: Colors.blue,
-                                      fontFamily: quickFont),
-                                  recognizer: new TapGestureRecognizer()
-                                    ..onTap = () async {}),
-                              TextSpan(
-                                  text: '\n & ',
-                                  style: TextStyle(
-                                      color: Colors.blue,
-                                      fontFamily: quickFont)),
-                              TextSpan(
-                                  text: 'Privacy Policy',
-                                  style: TextStyle(color: Colors.blue),
-                                  recognizer: new TapGestureRecognizer()
-                                    ..onTap = () async {}),
-                              TextSpan(
-                                  text: '.',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: quickFont))
-                            ]))
-                      ])))
+              margin: EdgeInsets.all(10),
+              constraints: BoxConstraints(
+                  maxWidth: MediaQuery.of(context).size.width,
+                  maxHeight: MediaQuery.of(context).size.height),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    _help(),
+                    SizedBox(height: 10),
+                    Text('Please enter your 10-digit \nmobile number.',
+                        style: TextStyle(fontSize: 16)),
+                    SizedBox(height: 10),
+                    Container(
+                        margin: EdgeInsets.all(10), child: _mobileInput()),
+                    RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(children: [
+                          TextSpan(
+                              text: 'By continue, you are agree to our ',
+                              style: TextStyle(
+                                  color: Colors.black, fontFamily: quickFont)),
+                          TextSpan(
+                              text: 'Terms of Service',
+                              style: TextStyle(
+                                  color: Colors.blue, fontFamily: quickFont),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () async {}),
+                          TextSpan(
+                              text: '\n & ',
+                              style: TextStyle(
+                                  color: Colors.blue, fontFamily: quickFont)),
+                          TextSpan(
+                              text: 'Privacy Policy',
+                              style: TextStyle(color: Colors.blue),
+                              recognizer: new TapGestureRecognizer()
+                                ..onTap = () async {}),
+                          TextSpan(
+                              text: '.',
+                              style: TextStyle(
+                                  color: Colors.black, fontFamily: quickFont))
+                        ]))
+                  ])))
     ]));
   }
 

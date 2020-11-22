@@ -5,7 +5,6 @@ import 'package:cricketfantasy/screen/widget/team_play.dart';
 import 'package:cricketfantasy/util/vars.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:cricketfantasy/util/extensions.dart';
 import 'package:line_icons/line_icons.dart';
 

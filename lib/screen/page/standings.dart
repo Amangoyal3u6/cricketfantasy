@@ -1,7 +1,6 @@
 import 'package:cricketfantasy/screen/page/standigs/live.dart';
 import 'package:cricketfantasy/util/vars.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'home.dart';
 import 'standigs/fixtures.dart';
 import 'standigs/results.dart';

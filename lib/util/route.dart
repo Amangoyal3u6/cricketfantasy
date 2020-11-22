@@ -1,7 +1,9 @@
+import 'package:cricketfantasy/screen/my_matches_screen.dart';
 import 'package:cricketfantasy/screen/page/contests.dart';
 import 'package:cricketfantasy/screen/page/create_team.dart';
 import 'package:cricketfantasy/screen/page/login.dart';
 import 'package:cricketfantasy/screen/page/mobile.dart';
+import 'package:cricketfantasy/screen/page/my_feed_screen.dart';
 import 'package:cricketfantasy/screen/page/my_profile.dart';
 import 'package:cricketfantasy/screen/page/otp.dart';
 import 'package:cricketfantasy/screen/page/signup.dart';
@@ -39,6 +41,10 @@ class Router {
         return MaterialPageRoute(builder: (_) => MyProfileScreen());
       case routeTransactionHistory:
         return MaterialPageRoute(builder: (_) => TransactionHistoryScreen());
+      case routeMyMatches:
+        return MaterialPageRoute(builder: (_) => MyMatchesScreen());
+      case routeFeed:
+        return MaterialPageRoute(builder: (_) => MyFeedScreen());
 
       default:
         return null;
