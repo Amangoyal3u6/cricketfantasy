@@ -18,6 +18,8 @@ const String routeCreateTeam = '/create_team';
 const String routeTeamPreview = '/team_preview';
 const String routeMyProfile = '/my_profile';
 const String routeTransactionHistory = '/transaction_history';
+const String routeMyMatches = '/my_matches';
+const String routeFeed = '/my_feed';
 
 const String appIcon = 'assets/images/app_icon.png';
 const String profileImage = 'assets/images/user_profile.png';

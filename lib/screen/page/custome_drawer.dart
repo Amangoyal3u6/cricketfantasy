@@ -1,4 +1,8 @@
+import 'package:cricketfantasy/screen/page/tab_screen_new.dart';
+import 'package:cricketfantasy/util/vars.dart';
 import 'package:flutter/material.dart';
+
+import '../my_matches_screen.dart';
 
 class CustomeDrawer extends StatelessWidget {
   @override
@@ -6,6 +10,22 @@ class CustomeDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
+          Container(
+            height: 100,
+            width: double.infinity,
+            child: DrawerHeader(
+              child: Text(
+                appName,
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade700,
+              ),
+            ),
+          ),
           Row(
             children: [
               Padding(
@@ -41,17 +61,24 @@ class CustomeDrawer extends StatelessWidget {
           ListTile(
             title: Text('Home'),
             leading: Icon(Icons.home),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TabScreenNew()));
+            },
           ),
           ListTile(
             title: Text('My Matches'),
             leading: Icon(Icons.assistant),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, routeMyMatches);
+            },
           ),
           ListTile(
             title: Text('Feed'),
             leading: Icon(Icons.feedback),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, routeFeed);
+            },
           ),
           ListTile(
             title: Text('Profile'),

@@ -1,8 +1,15 @@
 import 'package:cricketfantasy/screen/page/payment/kyc_verification.dart';
+import 'package:cricketfantasy/screen/privacy_policy_screen.dart';
+import 'package:cricketfantasy/screen/term_condition.dart';
 import 'package:cricketfantasy/screen/widget/webview.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import '../about_us_screen.dart';
+import '../career.dart';
+import '../faq_screen.dart';
+import '../how_to_playscreen.dart';
+import '../legality.dart';
+import '../refund_and_cancelation.dart';
 import 'contest_invite_code.dart';
 import 'home.dart';
 import 'package:cricketfantasy/util/extensions.dart';
@@ -37,48 +44,46 @@ class _MoreScreenState extends State<MoreScreen> {
                             widget.inviteFriendClick();
                           },
                           child: moreItem('Invite Friends')),
+                      // InkWell(
+                      //     onTap: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) =>
+                      //                   ContestInviteCodeScreen(),
+                      //               fullscreenDialog: true));
+                      //     },
+                      //     child: moreItem('Contest invite code')),
+                      // InkWell(
+                      //     onTap: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) =>
+                      //                   KYCVerificationScreen(),
+                      //               fullscreenDialog: true));
+                      //     },
+                      //     child: kyc()),
                       InkWell(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        ContestInviteCodeScreen(),
-                                    fullscreenDialog: true));
-                          },
-                          child: moreItem('Contest invite code')),
-                      InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        KYCVerificationScreen(),
-                                    fullscreenDialog: true));
-                          },
-                          child: kyc()),
-                      InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WebViewWidget(
-                                        title: 'Point system',
-                                        url: 'https://www.google.com/'),
-                                    fullscreenDialog: true));
-                          },
-                          child: moreItem('Points system')),
-                      InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WebViewWidget(
-                                        title: 'How to play',
-                                        url: 'https://www.google.com/'),
-                                    fullscreenDialog: true));
+                                    builder: (context) => HowToPlayScreen()));
                           },
                           child: moreItem('How to play')),
+                      // InkWell(
+                      //     onTap: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => WebViewWidget(
+                      //                   title: 'Point system',
+                      //                   url: 'https://www.google.com/'),
+                      //               fullscreenDialog: true));
+                      //     },
+                      //     child: moreItem('Points system')),
+
                       InkWell(
                           onTap: () {
                             // Navigator.push(
@@ -99,10 +104,32 @@ class _MoreScreenState extends State<MoreScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => WebViewWidget(
-                                        title: 'Legality',
-                                        url: 'https://www.google.com/'),
-                                    fullscreenDialog: true));
+                                    builder: (context) =>
+                                        PrivacyPolicyScreen()));
+                          },
+                          child: moreItem('Privacy Policy')),
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RefundAndPolicy()));
+                          },
+                          child: moreItem('Refund And Cancellation Policy')),
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TermAndCondition()));
+                          },
+                          child: moreItem('Terms and conditions')),
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LegalityScreen()));
                           },
                           child: moreItem('Legality')),
                       InkWell(
@@ -110,12 +137,17 @@ class _MoreScreenState extends State<MoreScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => WebViewWidget(
-                                        title: 'Terms and conditions',
-                                        url: 'https://www.google.com/'),
-                                    fullscreenDialog: true));
+                                    builder: (context) => CareerScreen()));
                           },
-                          child: moreItem('Terms and conditions'))
+                          child: moreItem('Career')),
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => FaqScreen()));
+                          },
+                          child: moreItem('FAQs')),
                     ]),
                 childCount: 1))
       ])

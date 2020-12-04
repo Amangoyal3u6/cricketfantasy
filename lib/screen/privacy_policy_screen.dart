@@ -1,27 +1,23 @@
 import 'dart:convert';
 
-import 'package:cricketfantasy/model/config.dart';
-import 'package:cricketfantasy/model/model.dart';
-import 'package:cricketfantasy/model/schedule/api_service.dart';
+import 'package:cricketfantasy/util/vars.dart';
 import 'package:flutter/material.dart';
-
-import '../util/vars.dart';
-import 'page/custome_drawer.dart';
-import 'page/wallet_screen.dart';
 import 'package:http/http.dart' as http;
 
-class AboutUsScreen extends StatefulWidget {
+import 'page/wallet_screen.dart';
+
+class PrivacyPolicyScreen extends StatefulWidget {
   @override
-  _AboutUsScreenState createState() => _AboutUsScreenState();
+  _PrivacyPolicyScreenState createState() => _PrivacyPolicyScreenState();
 }
 
-class _AboutUsScreenState extends State<AboutUsScreen> {
+class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
   String stringResponse;
   List listResponse;
-  Map mapResponse;
   Future fetchData() async {
     http.Response response;
-    String url = Config.url;
+    final urlh = "https://www.khiladi-world.com/api/v1/privacy-policy/";
+    String url = urlh;
     response = await http.get(url);
     if (response.statusCode == 200) {
       setState(() {
@@ -68,6 +64,10 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
             ? Container()
             : Container(
                 margin: EdgeInsets.only(top: 20, left: 16, right: 16),
-                child: Text(listResponse[0]['description'].toString())));
+                child: Column(
+                  children: [
+                    Text(listResponse[0]['description'].toString()),
+                  ],
+                )));
   }
 }
